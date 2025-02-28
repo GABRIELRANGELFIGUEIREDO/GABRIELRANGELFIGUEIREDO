@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Cliente</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to left, #05d3f8, #0f4571);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .box {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 30px;
+            border-radius: 15px;
+            width: 350px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+            border: 3px solid dodgerblue;
+        }
+        fieldset {
+            border: none;
+        }
+        legend {
+            background-color: dodgerblue;
+            padding: 8px 15px;
+            border-radius: 5px;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+        }
+        .input-box {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .input-box input, .input-box select, .input-box textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid white;
+            border-radius: 5px;
+            background: none;
+            color: white;
+            outline: none;
+        }
+        .input-box label {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            transition: 0.3s;
+            pointer-events: none;
+            color: white;
+        }
+        .input-box input:focus ~ label,
+        .input-box input:valid ~ label,
+        .input-box textarea:focus ~ label,
+        .input-box textarea:valid ~ label {
+            top: -18px;
+            font-size: 12px;
+            color: dodgerblue;
+        }
+        input[type="date"] {
+            padding: 8px;
+            border: 2px solid white;
+            border-radius: 5px;
+            background: none;
+            color: white;
+            width: 100%;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: dodgerblue;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        input[type="submit"]:hover {
+            background: #0f4571;
+        }
+        .checkbox-group label {
+            display: block;
+            margin: 5px 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <form action="#" method="POST">
+            <fieldset>
+                <legend><b>Cadastro de Cliente</b></legend>
+                
+                <div class="input-box">
+                    <input type="text" name="nome" id="nome" required>
+                    <label for="nome">Nome</label>
+                </div>
+                
+                <div class="input-box">
+                    <input type="date" name="data_nascimento" id="data_nascimento" required>
+                </div>
+                
+                <div class="input-box">
+                    <input type="number" name="idade" id="idade" required>
+                    <label for="idade">Idade</label>
+                </div>
+                
+                <div class="input-box">
+                    <input type="tel" name="telefone" id="telefone" required>
+                    <label for="telefone">Telefone</label>
+                </div>
+                
+                <div class="input-box">
+                    <input type="text" name="cidade" id="cidade" required>
+                    <label for="cidade">Cidade</label>
+                </div>
+                
+                <div class="input-box">
+                    <input type="text" name="estado" id="estado" required>
+                    <label for="estado">Estado</label>
+                </div>
+                
+                <div class="input-box">
+                    <input type="text" name="endereco" id="endereco" required>
+                    <label for="endereco">Endereço</label>
+                </div>
+                
+                <div>
+                    <p>Já é cliente?</p>
+                    <input type="radio" name="cliente" id="cliente-sim" value="Sim" required>
+                    <label for="cliente-sim">Sim</label>
+                    <input type="radio" name="cliente" id="cliente-nao" value="Nao" required>
+                    <label for="cliente-nao">Não</label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <p>Serviços contratados:</p>
+                    <input type="checkbox" name="servicos[]" value="TV">
+                    <label for="tv">TV por assinatura</label>
+                    <input type="checkbox" name="servicos[]" value="Internet">
+                    <label for="internet">Internet Banda Larga</label>
+                    <input type="checkbox" name="servicos[]" value="Telefone">
+                    <label for="telefone">Linha Telefônica</label>
+                </div>
+                <br><br><br>
+                
+                <div class="input-box">
+                    <textarea name="observacao" id="observacao" rows="3"></textarea>
+                    <label for="observacao">Observação</label>
+                </div>
+                
+                <input type="submit" value="Enviar">
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
